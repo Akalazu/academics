@@ -9,12 +9,40 @@
 .back, nav , footer{
     background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),  url(../image/banner.png)  ;
 }
+.sticky{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.staffHeaderImage{
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+.staffHeaderImage .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .3;
+    background: #f1453d;
+    
+}
+.display-4{
+    color: #fff;
+    padding-top: 60px;
+    font-weight: 400;
+}
 .nav-img{
     padding: 0 2rem 0 2rem;
 }
 .image{
    height: 100px; 
 }
+
 .nav-link{
     margin-right: 30px;
 }
@@ -27,10 +55,15 @@
     margin-bottom: 5px;
     padding-bottom: 5px;
 }
+.stories{
+    font-size: 40px;
+    text-align: center;
+}
 footer{
     margin-top: 4rem;
+    height: 100%;
     background-color: #183661;
-    padding: 3rem 0;
+    padding: 2rem 0 0 0;
     font-size: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff; 
