@@ -196,32 +196,32 @@
           var address = document.getElementById("InputAddress").value;
           var email = document.getElementById("InputEmail").value;
           var message = document.getElementById("textarea").value;
-      //     if(firstName == "" || lastName == "" || address == "" || message == "" || email == ""){
-      //       swal(
-      //         "Empty Fields" ,"A field or two is missing, Kindly check and make sure that all fields are occupied" ,{
-      //                icon: "warning",
-      //                dangerMode: true,
-      //                button: "OK"
-      //       })
-      //     }else{
-      //           swal("Message Sent!", "We'll get back to you shortly.", {
-      //           icon: "success",
-      //           className: "container",
-      //           // width: 700,
-      //           // padding: "3em",
-      //           button: {
-      //           text: "Ok",
-      //           className: "btn-success"
-      //           }
-      //       });
-      //   }
-      // }
-      swal({
-        text: "Congrats!",
-        title: "Your head is there",
-        type: "success"
-             });
+          if(firstName == "" || lastName == "" || address == "" || message == "" || email == ""){
+            swal(
+              "Empty Fields" ,"A field or two is missing, Kindly check and make sure that all fields are occupied" ,{
+                     icon: "warning",
+                     dangerMode: true,
+                     button: "OK"
+            })
+          }else{
+                swal("Message Sent!", "We'll get back to you shortly.", {
+                icon: "success",
+                className: "container",
+                // width: 700,
+                // padding: "3em",
+                button: {
+                text: "Ok",
+                className: "btn-success"
+                }
+            });
         }
+      }
+      // swal({
+      //   text: "Congrats!",
+      //   title: "Your head is there",
+      //   type: "success"
+      //        });
+      //   }
       </script>
 
 </body>
