@@ -207,9 +207,11 @@
             closeOnClickOutside: false,
             button: {
                 text: "Ok",
-                className: "btn-danger"}
-            });
-            location.reload();
+                className: "btn-danger"
+                }
+              }).then(function(){ 
+   location.reload();
+        })
           }else{
                 swal({
                   title:"Message Sent!", 
@@ -220,9 +222,10 @@
                 text: "Ok",
                 className: "btn-success"
                 }
-            });
-            location.reload();
-        }
+   
+            }).then(function(){ 
+   location.reload();
+        })
       }
       // swal({
       //   text: "Congrats!",
