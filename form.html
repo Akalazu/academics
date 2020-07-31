@@ -209,9 +209,10 @@
                 text: "Ok",
                 className: "btn-danger"
                 }
-              }).then(function(){ 
-   location.reload();
-        })
+              });
+  //             .then(function(){ 
+  //  location.reload();
+  //       })
           }else{
                 swal({
                   title:"Message Sent!", 
@@ -222,10 +223,15 @@
                 text: "Ok",
                 className: "btn-success"
                 }
-   
-            }).then(function(){ 
+                }).then(function(){ 
    location.reload();
-        })
+   }
+);;
+          }
+   
+  //           }).then(function(){ 
+  //  location.reload();
+  //       })
       }
       // swal({
       //   text: "Congrats!",
