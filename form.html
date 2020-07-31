@@ -6,7 +6,7 @@
     <title>Project One</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/sweetalert.css">
+    <!-- <link rel="stylesheet" href="css/sweetalert.css"> -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/dddc3dbeae.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12 mb-2">
-                    <label for="InputEmail">Email</label>
+                    <label for="InputEmail">Email<small class="text-muted"> (Important)</small></label>
                     <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
                   </div>
                 </div>
@@ -185,10 +185,8 @@
       <!-- END OF FOOTER -->
       <script src="js/jquery.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
-      <script src="js/sweetalert.min.js"></script>
-      <script>
-        import swal from ("core");
-      </script>
+      <!-- <script src="js/sweetalert.min.js"></script> -->
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
       <script>
         document.getElementById("submitBtn").onclick = function(){
           var firstName = document.getElementById("InputFirstName").value;
@@ -196,19 +194,22 @@
           var address = document.getElementById("InputAddress").value;
           var email = document.getElementById("InputEmail").value;
           var message = document.getElementById("textarea").value;
-          if(firstName == "" || lastName == "" || address == "" || message == "" || email == ""){
-            swal(
-              "Empty Fields" ,"A field or two is missing, Kindly check and make sure that all fields are occupied" ,{
-                     icon: "warning",
-                     dangerMode: true,
-                     button: "OK",
-                     timer: undefined
-            })
+          if(firstName == "" || lastName == ""){
+            swal({
+            title: "Empty Fields!",
+            text: "A field or two is missing, Please check and make sure that all fields are occupied",
+            icon: "error",
+            closeOnClickOutside: false,
+            button: {
+                text: "Ok",
+                className: "btn-danger"}
+            });
           }else{
-                swal("Message Sent!", "We'll get back to you shortly.", {
+                swal({
+                  title:"Message Sent!", 
+                  text:"We'll get back to you shortly.",
                 icon: "success",
-                timer: undefined,
-                className: "container",
+                closeOnClickOutside: false,
                 // width: 700,
                 // padding: "3em",
                 button: {
