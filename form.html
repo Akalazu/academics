@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarToggler">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a href="" class="nav-link text-light">Home</a>
+                  <a href="index.html" class="nav-link text-light">Home</a>
                 </li>
                 <li class="nav-item dropdown"> 
                   <a class="nav-link  text-light" href="">Services</a>
@@ -188,13 +188,14 @@
       <!-- <script src="js/sweetalert.min.js"></script> -->
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
       <script>
-        document.getElementById("submitBtn").onclick = function(){
+        document.getElementById("submitBtn").onclick = function(e){
+          e.preventDefault();
           var firstName = document.getElementById("InputFirstName").value;
           var lastName = document.getElementById("InputLastName").value;
           var address = document.getElementById("InputAddress").value;
           var email = document.getElementById("InputEmail").value;
           var message = document.getElementById("textarea").value;
-          if(firstName == "" || lastName == ""){
+          if(firstName == "" || lastName == "" || address =="" || email =="" || message==""){
             swal({
             title: "Empty Fields!",
             text: "A field or two is missing, Please check and make sure that all fields are occupied",
@@ -210,8 +211,6 @@
                   text:"We'll get back to you shortly.",
                 icon: "success",
                 closeOnClickOutside: false,
-                // width: 700,
-                // padding: "3em",
                 button: {
                 text: "Ok",
                 className: "btn-success"
