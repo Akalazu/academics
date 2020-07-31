@@ -6,6 +6,7 @@
     <title>Project One</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/sweetalert.css">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/dddc3dbeae.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -70,7 +71,7 @@
               </div>
               
               <div class="col-md-6">
-                <form class="form-group">
+                <form class="form-group ">
                   <h2 class="text text-center text-info text-uppercase py-3">Leave a Message</h2>
                   <div class="row ">
                   <div class="col-md-6 mb-2">
@@ -97,7 +98,7 @@
                 <div class="row p">
                   <div class="col-md-12 mb-2">
                     <label for="textarea">Message</label>
-                      <textarea class="form-control" id="textarea" placeholder="Type your message" rows="8" required></textarea>
+                      <textarea class="form-control" id="textarea" placeholder="Type your message" rows="8" ></textarea>
                       
                   </div>
                 </div>
@@ -107,7 +108,7 @@
                     
               <div class="row">
                 <div class="col-md-12">
-                  <button type="submit" class="btn btn-outline-primary btn-block py-3" onclick="myFunction()">Submit</button>
+                  <button type="submit" class="btn btn-outline-primary btn-block py-3" id="submitBtn">Submit</button>
                 </div>
                 </div>
               
@@ -189,11 +190,37 @@
         import swal from ("core");
       </script>
       <script>
-        function myFunction(){
-          var firstName = document.getElementById("InputFirstName").value.trim();
-          var lastName = document.getElementById("InputLastName").value.trim();
-          var address = document.getElementById("InputAddress").value.trim();
-          var email = document.getElementById("InputEmail").value.trim();
+        document.getElementById("submitBtn").onclick = function(){
+          var firstName = document.getElementById("InputFirstName").value;
+          var lastName = document.getElementById("InputLastName").value;
+          var address = document.getElementById("InputAddress").value;
+          var email = document.getElementById("InputEmail").value;
+          var message = document.getElementById("textarea").value;
+      //     if(firstName == "" || lastName == "" || address == "" || message == "" || email == ""){
+      //       swal(
+      //         "Empty Fields" ,"A field or two is missing, Kindly check and make sure that all fields are occupied" ,{
+      //                icon: "warning",
+      //                dangerMode: true,
+      //                button: "OK"
+      //       })
+      //     }else{
+      //           swal("Message Sent!", "We'll get back to you shortly.", {
+      //           icon: "success",
+      //           className: "container",
+      //           // width: 700,
+      //           // padding: "3em",
+      //           button: {
+      //           text: "Ok",
+      //           className: "btn-success"
+      //           }
+      //       });
+      //   }
+      // }
+      swal({
+        text: "Congrats!",
+        title: "Your head is there",
+        type: "success"
+             });
         }
       </script>
 
