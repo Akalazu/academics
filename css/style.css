@@ -78,7 +78,7 @@ footer{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff; 
 }
-footer a{
+footer li a{
     font-size: 15px;
     color:#51be78;
 }
@@ -91,9 +91,13 @@ footer .footer-heading {
     margin-bottom: 30px; 
 }
 .footer-icons{
-    border: 1px dashed white;
-    border-radius: 50%;
+    /* border: 1px dashed white;
+    border-radius: 50%; */
     padding: 10px;
+    color: #fff; 
+}
+.footer-icons:hover{
+     color: #51be78;
 }
 footer .footer-heading span {
       border-bottom: 3px solid #fff;
