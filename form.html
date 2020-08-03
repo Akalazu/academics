@@ -25,7 +25,7 @@
         <div id="bottomHeader">
           <!-- <div class="container-fluid "> -->
            <nav class="navbar navbar-dark navbar-expand-md sticky">
-            <a class="navbar-brand" href=""><img src="image/logo.png" alt="image" class="img-fluid nav-img"></a>
+            <a class="navbar-brand" href="index.html"><img src="image/logo.png" alt="image" class="img-fluid nav-img"></a>
             <button data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarResponsive" type="button" class="navbar-toggler order-first">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,10 +34,10 @@
                 <li class="nav-item active">
                   <a href="index.html" class="nav-link text-light">Home</a>
                 </li>
-                <li class="nav-item dropdown"> 
+                <!-- <li class="nav-item dropdown"> 
                   <a class="nav-link  text-light" href="">Services</a>
                  
-                 </li> 
+                 </li>  -->
                  <li class="nav-item dropdown"> 
                   <a class="nav-link  text-light" href="staff.html">Staff</a>
                  </li> 
@@ -126,11 +126,11 @@
 
       
       <!-- FOOTER -->
-      <footer>
+      <footer style="margin-top: 225px;">
         <div class="container">
           <div class="row pt-5">
             <div class="col-md-4">
-              <a href="#">
+              <a href="index.html">
                 <img src="image/logo.png" alt="" class="img-fluid mb-4">
               </a>
               <p class="lead" style="font-family: 'Dosis', sans-serif;">A performance based company aimed at empowering people..</p>
@@ -163,34 +163,48 @@
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-12  footer-icons my-3">
-              <div class="col-lg-3 ">
-                  <a><i class="fa fa-facebook fa-3x me mr-1"></i></a>
-                </div>
-                <div class="col-lg-3">
-                    <a><i class="fa fa-instagram fa-3x me mr-1"></i></a>
-                  </div>
-                  <div class="col-lg-3 ">
-                    <a><i class="fa fa-twitter fa-3x me mr-1"></i></a>
-                  </div>
-                  <div class="col-lg-3">
-                    <a><i class="fa fa-whatsapp fa-3x me mr-1"></i></a>
-                  </div>
-  
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+            <div class=" footer-icons my-3">
+              <div class="col-lg-3">
+                <a href="https://free.facebook.com/Terryblaze.spike.lee.10/about?lst=100010225241106%3A100010225241106%3A1596191357&refid=17"><i class="fa fa-facebook fa-3x me"></i></a>
+              </div>
+              <div class="col-lg-3">
+                <a><i class="fa fa-instagram fa-3x me"></i></a>
+              </div>
+              <div class="col-lg-3">
+                <a><i class="fa fa-twitter fa-3x me"></i></a>
+              </div>
+              <div class="col-lg-3">
+                <a href=" https://api.whatsapp.com/send?phone=+2349035946770"><i class="fa fa-whatsapp fa-3x me"></i></a>
+              </div>
             </div>
-        </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
         </div>
         <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="copyright">
+          <div class="row">
+            <div class="col-12">
+              <div class="copyright">
                 <p>
-               Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed and Developed by <a href="https://free.facebook.com/Terryblaze.spike.lee.10/about?lst=100010225241106%3A100010225241106%3A1596191357&refid=17" target="_blank" class="text-success"> Akalazu David</a>
-                    </p>
+                  Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  All rights reserved <br> Designed and Developed by
+                  <a
+                    href="https://free.facebook.com/Terryblaze.spike.lee.10/about?lst=100010225241106%3A100010225241106%3A1596191357&refid=17"
+                    target="_blank"
+                    class="text-success"
+                  >
+                    Akalazu David</a
+                  >
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </footer>
       <!-- END OF FOOTER -->
       <script src="js/jquery.min.js"></script>
@@ -205,6 +219,8 @@
           var address = document.getElementById("InputAddress").value;
           var email = document.getElementById("InputEmail").value;
           var message = document.getElementById("textarea").value;
+          var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          // return re.test(String(email).toLowerCase());
           if(firstName == "" || lastName == "" || address =="" || email =="" || message==""){
             swal({
             title: "Empty Fields!",
@@ -216,10 +232,21 @@
                 className: "btn-danger"
                 }
               });
-  //             .then(function(){ 
-  //  location.reload();
-  //       })
-          }else{
+          }
+          else if(!re.test(email)){
+            swal({
+            title: "Error!",
+            text: "Kindly input a valid Email",
+            icon: "error",
+            closeOnClickOutside: false,
+            button: {
+                text: "Ok",
+                className: "btn-danger"
+                }
+            
+            });
+          }
+          else{
                 swal({
                   title:"Message Sent!", 
                   text:"We'll get back to you shortly.",

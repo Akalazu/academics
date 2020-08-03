@@ -75,6 +75,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
 }
 .slider .card { 
   background-color: rgba(245, 245, 245, 0.4);
@@ -92,17 +93,20 @@
     margin: 15px 10px 5px 10px;
     background: #fff;
     display: flex;
+    /* width: 330px; */
+    width: 100%;
+    height: 800px;
   }
   .slider .card .img{
-    height:100%;
-    width: 100%;
+    max-height:100%;
+    max-width: 100%;
     
   }
   .slider .card .img img{
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* display: block; */
   }
   .slider .card .content{
     padding: 10px 20px;
@@ -130,20 +134,16 @@
  .service h3{
   font-family: 'Arima Madurai', cursive;
  }
- /* .service p{
-  font-family: 'Kurale', serif;
- } */
  .mission h2{
   font-family: 'Laila', serif;
  }
 footer{
-    /* margin-top: 4rem; */
     height: 100%;
     background-color: #183661;
-    /* padding: 2rem 0 0 0; */
     font-size: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff; 
+    
 }
 footer li a{
     font-size: 15px;
@@ -158,12 +158,9 @@ footer .footer-heading {
     margin-bottom: 30px; 
 }
 .footer-icons{
-  display: inline-flex;
+  display: flex;
 }
 .footer-icons i.me{
-    /* border: 1px dashed white;
-    border-radius: 50%; */
-    padding: 5px;
     color: #fff;
     text-align: center;
     display: inline-block;
@@ -181,7 +178,6 @@ footer a:hover {
  }
 footer .copyright {
     color: #fff;
-    /* padding-top: 4rem; */
     font-size: 16px;
     text-align: center; 
 }
